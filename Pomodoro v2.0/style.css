@@ -1,0 +1,55 @@
+.nav-wrapper {
+  background-color: rgb(38, 166, 154);
+}
+
+nav i.material-icons {
+  font-size: 37px !important;
+}
+
+.upper-buttons {
+  margin-top: 7% !important;
+  margin-bottom: 3% !important;
+}
+
+.displayTimeLeft {
+  text-align: center;
+  font-size: 170px;
+}
+
+.displayEndTime {
+  text-align: center;
+  font-size: 30px;
+}
+
+section {
+  height: 100vh;
+  background-color: rgb(37, 35, 35);
+  font-family: sans-serif;
+}
+
+#start-button {
+  background-color: green;
+}
+
+#stop-button {
+  background-color: red;
+}
+
+.input-field {
+  margin-top: 50px !important;
+}
+
+.tap-button {
+  background-color: rgb(38, 166, 154);
+}
+
+.target-cont {
+  left: 30px !important;
+  width: 450px !important;
+}
+
+.target-item {
+  margin-top: 10px;
+  vertical-align: bottom;
+  font-size: 14px;
+}

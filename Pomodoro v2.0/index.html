@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Timer</title>
+    <link
+      href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAABAQ3AKusqwABAvwAAgL8AAQLTQBVVNgA1tfWAAYHggAICJgAZmVlAAQEzQACAvQAAgH3AAwLfwATZhMABAU1AEdH5QA8PPQAHjMeAGNjYwAPUw8Aamr1AAICDABRUNwArKysANfX+AAEBDAAEWQRAAIDnwAOPA4ABARiAAMDTAADA7gAAgL1AAIBIABiYWEAAgK7AAQEQQCCgYIAwcLBABhzGQAHDzMAmZmZAGtq7gAHB1IABARjAAMDoAADAvYA+/v+AGxsbADExMQAAwNFAElK7wAEBHQAAgK0AAMDdwArLCsAAwSeALOzswCamZoACAiCAAEC9wDt7e0AODk4AAICvQAMDJgAAAD9AAgHEQABAP0Au7y7AAMDDAAEBPoAOzs7AAMDVwAWF+UAZmZmAAMD9QA9PT4AAgLfAAICIAA/P+8AAAD+AAEA/gBkZGQAKTAqADw7PAA1WzUADTEYAAEBLADY2NgAcXFxAJiY8gB2dvAAAgEkAAEB/ABTWVMASUn1ADAw8gAwMDMARkZHAAcGmwBCQkIABBBFAJCQ8QAzMjYABweIAAAB/QAICBEAAQH9AAIC8gAHB4AAaWjwAAEC6gAvL/YADC8PAMPDwwAWcBYABASiAD9A7wADAzkAAgIjADo6OQAFBSsAh4eHAAQEFQAFBBUAt7a3AMHBwQABAf4AIB8jAAcG+AABAtIAhYWFAAgIjwAdHSEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgZAoAAAAAAAAAAAAB/Tmx5WVleREk7AAAAAABbfh8vIUElNx0ufTIAAABUUHZPIl9fAz5xhDojFACAR3YNUlJSUlJTQ1IMdhdGTDRuUlNSU1JtUkVSUzAgJFY4RVJSBINhEkhTUlKBanpkNmttbWJcaCxwNXcWcghmfHhNbQtlhgVnQgYaMV0mJwCCbxEYPVgPdSoJS1EOhz8AWml7LRApHBVzAUobYwcAAAAAMzw5Ex5XQAordAAAAAAAAAAAAABVYAAAAAAAAAAAAAAAAAAAhRkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD8PwAA4AcAAMADAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAEAAOAHAAD+fwAA/n8AAP//AAA="
+      rel="icon"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="background">
+      <!--Containter-->
+
+      <!--NAV BAR-->
+      <div class="containter">
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center"
+              ><i class="material-icons">access_time</i>Pomodoro Timer</a>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <!-- UPPER BUTTONS -->
+      <div class="container center-align upper-buttons">
+        <a data-time="1500" class="waves-effect waves-light btn upper-button"
+          >Pomodoro</a
+        >
+        <a data-time="300" class="waves-effect waves-light btn s4 upper-button"
+          >Short Break</a
+        >
+        <a data-time="600" class="waves-effect waves-light btn upper-button"
+          >Long Break</a
+        >
+      </div>
+
+      <!-- TIMER DISPLAY -->
+      <div class="container">
+        <div class="display">
+          <h1 class="displayTimeLeft">0:00</h1>
+          <p class="displayEndTime"></p>
+        </div>
+      </div>
+
+      <!-- LOWER BUTTONS -->
+      <div class="container center-align">
+        <a
+          id="start-button"
+          class="waves-effect waves-light btn submit white-text"
+          >Start</a
+        >
+        <a id="stop-button" class="waves-effect waves-light btn white-text"
+          >Stop</a
+        >
+        <a id="reset-button" class="waves-effect waves-light btn grey darken-1"
+          >Reset</a
+        >
+      </div>
+
+      <!--FORM-->
+      <div class="container">
+        <form name="customForm" id="custom">
+          <div class="input-field">
+            <input type="number" min="0" name="minutes" />
+            <label>Enter Minutes</label>
+          </div>
+        </form>
+      </div>
+      <!--TAP TARGET-->
+      <div class="fixed-action-btn" style="bottom: 45px; right: 24px">
+        <a
+          id="menu"
+          onclick="$('.tap-target').tapTarget('open')"
+          class="waves-effect waves-light btn btn-floating btn-large cyan"
+        >
+          <i class="material-icons tap-button">info_outline</i>
+        </a>
+      </div>
+
+      <!--TAP TARGET CONTENT-->
+      <div class="tap-target red lighten-1" data-target="menu">
+        <div class="tap-target-content white-text target-cont">
+          <h5 class="center target-title">HOW IT WORKS</h5>
+          <ul>
+            <li class="target-item align-right">
+              <i class="material-icons left">looks_one</i> Select a timer from
+              the above options to begin your pomodoro.
+            </li>
+            <li class="target-item align-right">
+              <i class="material-icons left">looks_two</i>Start and stop the
+              timer using the green and red buttons.
+            </li>
+            <li class="target-item align-right">
+              <i class="material-icons left">looks_3</i>Enter your own time
+              using the 'Enter Minutes' input and hit Enter.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Containter-->
+    <script src="./app.js"></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
